@@ -16,3 +16,6 @@ The MVC Web Application contains the following:
 * A model class contains the properties(that are the headers of the csv file).
 
 ## Solution
+
+![Part1](https://github.com/ChristinaGislason/Lab11-IntroToMVCandCore/blob/master/Lab11-MVCandCore-ScreencapturePt1.JPG)
+![Part2](https://github.com/ChristinaGislason/Lab11-IntroToMVCandCore/blob/master/Lab11-MVCandCore-ScreencapturePt2.JPG)
