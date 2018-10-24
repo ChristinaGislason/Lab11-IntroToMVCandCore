@@ -35,9 +35,12 @@ namespace Lab11_IntroToMVCandCore.Controllers
 
         public ViewResult Results (int start, int end)
         {
-            List<TimePerson> persons = new List<TimePerson>();
 
-            List<TimePerson> listofPeople = persons.Where(p => (p.Year >= start) && (p.Year <= end)).ToList();
+            List<TimePerson> listofPeople = TimePerson.GetPersons(start, end);
+
+            ViewData["start"] = start;
+            ViewData["end"] = end;
+
             return View(listofPeople);
         }
 
