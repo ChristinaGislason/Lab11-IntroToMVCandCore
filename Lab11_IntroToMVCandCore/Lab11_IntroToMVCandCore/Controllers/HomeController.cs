@@ -10,7 +10,7 @@ namespace Lab11_IntroToMVCandCore.Controllers
     public class HomeController : Controller
     {
         /// <summary>
-		/// Default page of Home Controller
+		/// Default page of Home Controller where user inputs search
 		/// </summary>
 		/// <returns>Generated Home View</returns>
 		[HttpGet]
@@ -20,24 +20,25 @@ namespace Lab11_IntroToMVCandCore.Controllers
             // Views -> Home -> Index.cshtml
             return View();
         }
+        
         /// <summary>
-        /// Post action for form submission of Time Person information
+        /// Post action for form submission of Time Person based on years searched
         /// </summary>
-        /// <param name="name">name</param>
-        /// <param name="year">year</param>
+        /// <param name="start">start year</param>
+        /// <param name="end">end year</param>
         /// <returns>Redirect to the Results</returns>
         [HttpPost]
-        public IActionResult Index(string name, int year)
+        public IActionResult Index(int start, int end)
         {
-            TimePerson timePerson = new TimePerson();
-            return RedirectToAction("ViewImports", new { name, year });
+            return RedirectToAction("Results", new { start, end });
         }
 
-        public IActionResult ViewImports(string name, int year)
+        public ViewResult Results (int start, int end)
         {
-            TimePerson timePerson = new TimePerson();
+            List<TimePerson> persons = new List<TimePerson>();
 
-            return View(name);
+            List<TimePerson> listofPeople = persons.Where(p => (p.Year >= start) && (p.Year <= end)).ToList();
+            return View(listofPeople);
         }
 
     }

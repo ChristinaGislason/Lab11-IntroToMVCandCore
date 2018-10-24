@@ -1,0 +1,52 @@
+﻿@model List<Lab11_IntroToMVCandCore.Models.TimePerson>
+
+@{
+    var start = (int)ViewData["start"];
+    var end = (int)ViewData["end"];
+}
+
+<head>
+    <link rel="stylesheet" href="~/Style.css" />
+</head>
+
+<body>
+    <div class="main-table">
+        <h1>TIME PERSON</h1>
+        <h1>from @start to @end</h1>
+        
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Name</th>
+                    <th>Honor</th>
+                    <th>Country</th>
+                    <th>Birth Year</th>
+                    <th>Death Year</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Context</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var person in Model)
+                {
+                    <tr>
+                        <td>@person.Year</td>
+                        <td>@person.Name</td>
+                        <td>@person.Honor</td>
+                        <td>@person.Country</td>
+                        <td>@person.Birth_Year</td>
+                        <td>@person.DeathYear</td>
+                        <td>@person.Title</td>
+                        <td>@person.Category</td>
+                        <td>@person.Context</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</body>

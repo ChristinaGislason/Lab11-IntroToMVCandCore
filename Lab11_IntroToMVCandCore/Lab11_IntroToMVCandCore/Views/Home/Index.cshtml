@@ -1,5 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="main">
+        <h1>
+            TIME
+        </h1>
+
+        <h3>
+            What years will YOU choose?
+        </h3>
+
+        <form method="POST">
+            Start:<br />
+            <input type="number" maxlength="4" name="start" />
+            <br />
+            End:<br />
+            <input type="number" maxlength="4" name="end" />
+            <br />
+            <br />
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
